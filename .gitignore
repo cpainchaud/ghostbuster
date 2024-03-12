@@ -1,0 +1,5 @@
+.idea
+ghostbuster.iml
+
+# pycache
+__pycache__/

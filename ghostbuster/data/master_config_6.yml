@@ -1,0 +1,99 @@
+---
+pce_version: '74.0'
+pce_min_version: 2.8
+pce_max_version: 3.4
+services:
+  masterconfig:
+    servers:
+    - {api_url}
+    resources:
+      agent_master_config:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/master_config
+      controller_master_config:
+        url_fmt: api/v6/orgs/:org_id/controllers/:agent_id/master_config
+  evservice:
+    servers:
+    - {event_url}
+  support_report:
+    servers:
+    - {api_url}
+  feed:
+    servers:
+    - {api_url}
+  agent:
+    servers:
+    - {api_url}
+    resources:
+      agents:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id
+      agent_firewall_config:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/firewall_config?generation=:generation&full=:full
+      agent_service_reports:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/service_reports
+      agent_policy_config:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/policy?force=:force
+    actions:
+      event_log:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/event/log?message=:message
+      activate_agent:
+        url_fmt: api/v6/orgs/:org_id/agents/activate/
+      activate:
+        url_fmt: api/v6/orgs/:org_id/agents/activate/
+      activate_clone:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/activate_clone
+      heartbeat_agent:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/heartbeat
+      heartbeat:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/heartbeat
+      goodbye:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/goodbye
+      suspend:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/suspend
+      unsuspend:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/unsuspend
+      noop:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/agent_noop
+      tampering:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/tampering
+      support_reports:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/support_reports/:name
+      existing_iptable_rules:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/existing_iptable_rules/:name
+      deactivate_agent:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/deactivate/
+      deactivate:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/deactivate/
+      dropped_packet_log:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/dropped_packet_log/:name
+      system_logs:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/system_logs/
+      ops_alert_log:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/ops_alert_logs/
+      dev_alert_log:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/dev_alert_logs/
+      traffic_flows:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/traffic_flows/
+      rule_stats:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/rule_stats/
+      ip_secure_connections:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/ip_secure_connections/
+      interface_statuses_update_all:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/interface_statuses/update
+      lost_agent:
+        url_fmt: api/v6/orgs/:org_id/lost_agent
+      service_not_available:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/service_not_available
+      refresh_token:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/refresh_token
+      audit_log_events:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/audit_log_events
+      compatibility_check_report:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/compatibility_check_report
+      interactive_users:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/interactive_users
+      machine_identifier:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/machine_identifier
+      running_containers:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/running_containers?refresh=:refresh
+      software_upgrade:
+        url_fmt: api/v6/orgs/:org_id/agents/:agent_id/software/ven/image?architecture=:architecture&distribution=:distribution&version=:version

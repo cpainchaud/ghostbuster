@@ -1,0 +1,11 @@
+[Unit]
+Description=Manager Ghostbuster Admin Server
+After=network.target
+
+[Service]
+Type=simple
+User=ghostbuster
+ExecStart=/usr/bin/ghostbuster-admin-server --listen-address=0.0.0.0
+
+[Install]
+WantedBy=multi-user.target
